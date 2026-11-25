@@ -89,5 +89,10 @@ examples/             contenido de ejemplo e ilustración de portada
 - Tema: copia un `.css` de `themes/`, cambia el selector `[data-theme="…"]` y las variables; mantén las reglas `.cover-art`.
 - Paleta: una línea nueva en `palettes/palettes.css`.
 
+## Galería
+Mismo documento y misma ilustración de portada, con los 5 temas (de izquierda a derecha: `editorial`, `swiss`, `corporate`, `bold`, `mono`). El dibujo se recolorea solo según el tema y la paleta.
+
+![Portadas con los 5 temas](docs/covers.png)
+
 ## Licencia
 MIT © 2026 Aleix Garcia Pena. Consulta [`LICENSE`](LICENSE).
