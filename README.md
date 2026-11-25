@@ -1,105 +1,107 @@
-**Español** · [English](README.en.md)
+[Español](README.es.md) · **English**
 
 # pdf-polish
 
-Skill para Claude Code que **rediseña la presentación de un PDF o documento** sin tocar su contenido. Pensada para cuando el texto está bien pero Claude siempre genera el mismo diseño, color y estructura.
+A Claude Code skill that **redesigns the presentation of a PDF or document** without touching its content. Built for when the text is fine but Claude keeps producing the same design, colors and structure.
 
-- 5 temas × 7 paletas, con rotación automática para no repetir el aspecto del último PDF.
-- Fuente, fuente de títulos y colores personalizables.
-- **Portada ilustrada a medida** del tema del documento (opcional).
-- **Revisión automática de huecos en blanco** y de maquetación antes de entregar.
-- Sin dependencias que instalar: renderiza con Chrome (o Brave/Chromium) en macOS.
+- 5 themes × 7 palettes, with automatic rotation so each PDF looks different from the last.
+- Customizable body font, title font and colors.
+- **Custom illustrated cover** based on the document's topic (optional).
+- **Automatic whitespace and layout check** before delivering.
+- Nothing to install: it renders with Chrome (or Brave/Chromium) on macOS.
 
-## Requisitos
-- macOS con Google Chrome, Brave o Chromium en `/Applications`.
-- Herramientas de línea de comandos de Xcode (`swift`), para la revisión y la exportación a imagen.
+## Requirements
+- macOS with Google Chrome, Brave or Chromium in `/Applications`.
+- Xcode command line tools (`swift`), used for the layout check and image export.
 - Claude Code.
 
-## Instalación
+## Installation
 
 ```bash
 git clone https://github.com/ackedev/pdf-polish.git ~/.claude/skills/pdf-polish
 ```
 
-Abre una sesión nueva de Claude Code para que la cargue.
+Open a new Claude Code session so it loads the skill.
 
-## Cómo usarla
+## How to use it
 
-Pasa el PDF (o el markdown/texto) y pide la skill por su nombre. Todo lo que añadas es opcional; lo que no digas lo decide la skill.
+Give Claude the PDF (or the markdown/text) and ask for the skill by name. Everything you add is optional; whatever you leave out, the skill decides.
 
-### Lo mínimo
-> Aplica la skill pdf-polish a `informe.pdf`
+> It works in English and Spanish: ask for it by name ("Apply the pdf-polish skill…" / "Aplica la skill pdf-polish…") and Claude answers in your language.
 
-Te hará hasta 3 preguntas (para qué es, tono, si quieres portada) y generará el PDF.
+### The minimum
+> Apply the pdf-polish skill to `report.pdf`
 
-### Con todo especificado
-> Aplica la skill pdf-polish a `informe.pdf`
-> - Fuente del texto: Georgia
-> - Fuente de títulos: Futura
-> - Colores: rojo y naranja
-> - Con portada
+It will ask up to 3 questions (purpose, tone, whether you want a cover) and generate the PDF.
 
-### Más ejemplos
-- "Aplica pdf-polish a estas notas en markdown, estilo editorial, tonos verdes, sin portada."
-- "Aplica pdf-polish, tú decide el diseño." (no hará preguntas)
-- "Hazlo otra vez con otro tema" / "Mismo diseño pero en azul." (repite solo el render)
+### Everything specified
+> Apply the pdf-polish skill to `report.pdf`
+> - Body font: Georgia
+> - Title font: Futura
+> - Colors: red and orange
+> - With cover
 
-### Qué recibes
-1. El PDF nuevo.
-2. Tema, paleta y fuentes elegidos, con el motivo.
-3. Si hay portada, qué representa la ilustración.
+### More examples
+- "Apply pdf-polish to these markdown notes, editorial style, green tones, no cover."
+- "Apply pdf-polish, you decide the design." (no questions asked)
+- "Do it again with another theme" / "Same design but in blue." (only re-runs the render)
 
-## Portada a medida
-Si pides portada, la skill **no usa una imagen genérica**: resume de qué trata tu documento y diseña una ilustración que une el tema con su ámbito en una sola figura, sutil y con doble lectura. Por ejemplo, para un informe sobre el impacto ecológico de la tecnología: una planta cuyo tallo y ramas son pistas de circuito, con hojas orgánicas y una flor hecha de pads (ver `examples/cover-art/plant-circuit.svg`). La metodología está en [`cover-art.md`](cover-art.md).
+### What you get
+1. The new PDF.
+2. The theme, palette and fonts chosen, with the reason.
+3. If there is a cover, what the illustration represents.
 
-## Revisión de huecos en blanco
-Antes de entregar, la skill ejecuta `scripts/check_layout.swift`, que mide por página las palabras, hasta dónde llega el contenido y el mayor hueco interno. Si detecta páginas medio vacías, saltos de página sobrantes, huecos grandes o una densidad anormalmente baja, diagnostica la causa, corrige el HTML y vuelve a renderizar.
+## Custom cover
+If you ask for a cover, the skill **does not use a generic image**: it summarizes what your document is about and designs an illustration that merges the topic with its field into a single figure, subtle and with a double reading. For example, for a report on the environmental impact of technology: a plant whose stem and branches are circuit traces, with organic leaves and a flower made of pads (see `examples/cover-art/plant-circuit.svg`). The method is described in [`cover-art.md`](cover-art.md).
 
-## Colores y fuentes
-- `--accent`: color principal. `--accent2`: tono **oscuro** (fondos de portada). Pide "rojo y naranja" y la skill lo traduce a hex con criterio de contraste (por ejemplo naranja vivo + rojo oscuro).
-- Solo funcionan fuentes instaladas en el Mac; si no existe, la skill avisa y propone una parecida.
-- Fuentes seguras: Palatino, Baskerville, Georgia, Didot, Avenir Next, Futura, Optima, Gill Sans, Helvetica Neue, Menlo.
+## Whitespace check
+Before delivering, the skill runs `scripts/check_layout.swift`, which measures, per page, the word count, how far the content reaches and the largest internal gap. If it detects half-empty pages, stray page breaks, large gaps or an unusually low density, it diagnoses the cause, fixes the HTML and renders again.
 
-## Uso manual (sin Claude)
+## Colors and fonts
+- `--accent`: main color. `--accent2`: **dark** tone (cover backgrounds). Ask for "red and orange" and the skill turns it into hex values with contrast in mind (for example vivid orange + dark red).
+- Only fonts installed on your Mac work; if one is missing, the skill warns you and suggests a similar one.
+- Safe fonts: Palatino, Baskerville, Georgia, Didot, Avenir Next, Futura, Optima, Gill Sans, Helvetica Neue, Menlo.
+
+## Manual use (without Claude)
 ```bash
 S=~/.claude/skills/pdf-polish
-bash $S/scripts/pick.sh                      # sugiere "tema paleta"
+bash $S/scripts/pick.sh                      # suggests "theme palette"
 bash $S/scripts/render.sh --theme editorial --palette forest \
-     --in cuerpo.html --out salida.pdf       # cuerpo.html = solo el contenido del <body>
-swift $S/scripts/check_layout.swift salida.pdf --cover
+     --in body.html --out output.pdf         # body.html = only the contents of <body>
+swift $S/scripts/check_layout.swift output.pdf --cover
 ```
-Opciones de `render.sh`: `--theme`, `--palette`, `--accent`, `--accent2`, `--font-body`, `--font-title`, `--in`, `--out`.
+`render.sh` options: `--theme`, `--palette`, `--accent`, `--accent2`, `--font-body`, `--font-title`, `--in`, `--out`.
 
-## Estructura
+## Structure
 ```
-SKILL.md              instrucciones para Claude
-cover-art.md          cómo diseñar la ilustración de portada
-base.css              impresión y componentes comunes
+SKILL.md              instructions for Claude
+cover-art.md          how to design the cover illustration
+base.css              print rules and shared components
 themes/               editorial · swiss · corporate · bold · mono
-palettes/palettes.css 7 paletas
+palettes/palettes.css 7 palettes
 scripts/              render.sh · pick.sh · check_layout.swift · pdf2png.swift · pdf2text.swift · hasfont.swift
-examples/             contenido de ejemplo e ilustración de portada
+examples/             sample content and cover illustration
 ```
 
-## Límites conocidos
-- Solo macOS (Chrome + PDFKit).
-- Partir de un PDF recupera el texto, no las imágenes ni la estructura exacta de las tablas; un PDF escaneado no sirve.
-- El diseño lo escribe Claude en HTML cada vez: con contenidos muy largos o poco habituales conviene revisar el resultado.
-- Fuentes limitadas a las del sistema (sin Google Fonts) para funcionar sin conexión.
+## Known limits
+- macOS only (Chrome + PDFKit).
+- Starting from a PDF recovers the text, not the images or the exact table structure; a scanned PDF will not work.
+- Claude writes the design in HTML each time: with very long or unusual content, check the result.
+- Fonts limited to system fonts (no Google Fonts) so it works offline.
 
-## Añadir temas o paletas
-- Tema: copia un `.css` de `themes/`, cambia el selector `[data-theme="…"]` y las variables; mantén las reglas `.cover-art`.
-- Paleta: una línea nueva en `palettes/palettes.css`.
+## Adding themes or palettes
+- Theme: copy a `.css` from `themes/`, change the `[data-theme="…"]` selector and the variables; keep the `.cover-art` rules.
+- Palette: add one line to `palettes/palettes.css`.
 
-## Galería
-Mismo contenido con los 5 temas (de izquierda a derecha: `editorial`, `swiss`, `corporate`, `bold`, `mono`): portada arriba, página interior abajo.
+## Gallery
+The same content with the 5 themes (left to right: `editorial`, `swiss`, `corporate`, `bold`, `mono`): cover on top, interior page below.
 
-![Los 5 temas: portada y página interior](docs/themes.png)
+![The 5 themes: cover and interior page](docs/themes.png)
 
-### Con portada ilustrada
-Si pides portada, la skill diseña una ilustración a medida del documento. Aquí, un informe sobre el impacto ecológico de la tecnología: una planta cuyo tallo y ramas son pistas de circuito. El dibujo se recolorea solo según el tema y la paleta.
+### With an illustrated cover
+If you ask for a cover, the skill designs an illustration tailored to the document. Here, a report on the environmental impact of technology: a plant whose stem and branches are circuit traces. The drawing recolors itself to match the theme and palette.
 
-![Portadas con ilustración a medida](docs/cover-art.png)
+![Covers with a custom illustration](docs/cover-art.png)
 
-## Licencia
-MIT © 2026 Aleix Garcia Pena. Consulta [`LICENSE`](LICENSE).
+## License
+MIT © 2026 Aleix Garcia Pena. See [`LICENSE`](LICENSE).

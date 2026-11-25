@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Uso: pick.sh [tema1,tema2,...]
-# Imprime "tema paleta" evitando las últimas combinaciones y los últimos temas usados.
+# Usage: pick.sh [theme1,theme2,...]
+# Prints "theme palette" avoiding the latest combinations and themes used.
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")/.." && pwd)"
 HIST="${HOME}/.cache/pdf-polish/history"

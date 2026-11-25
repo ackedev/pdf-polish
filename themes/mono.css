@@ -1,4 +1,4 @@
-/* MONO: estética técnica, monoespaciada en títulos, sobria. Bueno para documentación, código, informes de ingeniería, trabajos de DAM. */
+/* MONO: technical look, monospaced headings, sober. Good for documentation, code, engineering reports, dev coursework. */
 [data-theme="mono"] { --bg:#fafaf8; --ink:#1a1d21; --muted:#6b7280; --rule:#d9dbd6;
   --font-head: Menlo, "SF Mono", monospace; --font-body: "Helvetica Neue", Helvetica, sans-serif; --size: 10pt; }
 [data-theme="mono"] h1 { font-size: 20pt; font-weight: 700; margin: 0 0 .6em; }
@@ -16,6 +16,6 @@
 [data-theme="mono"] pre code { color: inherit; }
 [data-theme="mono"] th { font-family: Menlo, monospace; }
 
-/* Ilustración de portada (opcional) */
+/* Cover illustration (optional) */
 [data-theme="mono"] .cover { --art-1: #e8eaec; --art-2: color-mix(in srgb, var(--accent) 55%, white); }
 [data-theme="mono"] .cover-art { right: 22mm; bottom: 22mm; width: 80mm; height: 100mm; }

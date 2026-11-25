@@ -1,12 +1,12 @@
-// Uso: swift pdf2png.swift entrada.pdf carpeta_salida [escala]
-// Exporta cada página del PDF a PNG (p1.png, p2.png, ...) usando PDFKit de macOS.
+// Usage: swift pdf2png.swift input.pdf output_folder [scale]
+// Exports each PDF page to PNG (p1.png, p2.png, ...) using macOS PDFKit.
 import Foundation
 import PDFKit
 import AppKit
 
 let args = CommandLine.arguments
 guard args.count >= 3, let doc = PDFDocument(url: URL(fileURLWithPath: args[1])) else {
-    FileHandle.standardError.write("Uso: pdf2png.swift entrada.pdf carpeta_salida [escala]\n".data(using: .utf8)!)
+    FileHandle.standardError.write("Usage: pdf2png.swift input.pdf output_folder [scale]\n".data(using: .utf8)!)
     exit(1)
 }
 let scale = args.count > 3 ? CGFloat(Double(args[3]) ?? 1.0) : 1.0
@@ -20,4 +20,4 @@ for i in 0..<doc.pageCount {
           let png = rep.representation(using: .png, properties: [:]) else { continue }
     try? png.write(to: URL(fileURLWithPath: "\(args[2])/p\(i + 1).png"))
 }
-print("OK: \(doc.pageCount) páginas")
+print("OK: \(doc.pageCount) pages")

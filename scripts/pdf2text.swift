@@ -1,11 +1,11 @@
-// Uso: swift pdf2text.swift entrada.pdf
-// Extrae el texto de un PDF página a página (para usar un PDF existente como fuente de contenido).
-// Limitación: no recupera imágenes ni la estructura de tablas; en un PDF escaneado no devuelve nada.
+// Usage: swift pdf2text.swift input.pdf
+// Extracts text from a PDF page by page (to use an existing PDF as a content source).
+// Limitation: does not recover images or table structure; returns nothing for a scanned PDF.
 import Foundation
 import PDFKit
 
 guard CommandLine.arguments.count >= 2, let doc = PDFDocument(url: URL(fileURLWithPath: CommandLine.arguments[1])) else {
-    FileHandle.standardError.write("Uso: pdf2text.swift entrada.pdf\n".data(using: .utf8)!)
+    FileHandle.standardError.write("Usage: pdf2text.swift input.pdf\n".data(using: .utf8)!)
     exit(1)
 }
 for i in 0..<doc.pageCount {

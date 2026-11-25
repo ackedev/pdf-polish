@@ -1,35 +1,35 @@
-<!-- Ejemplo de ilustración de portada: tema "impacto ecológico de la tecnología".
-     Idea: una planta cuyo tallo y ramas son pistas de circuito (ángulos de 45°), que nace de un chip,
-     con hojas orgánicas, una flor hecha de "pads" y píxeles que se desprenden de las hojas.
-     Se ve como una planta; el detalle técnico se descubre al mirar de cerca. -->
+<!-- Cover illustration example: topic "environmental impact of technology".
+     Idea: a plant whose stem and branches are circuit traces (45° angles), growing from a chip,
+     with organic leaves, a flower made of "pads" and pixels breaking away from the leaves.
+     It reads as a plant; the technical detail is discovered up close. -->
 <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--art-1)"
      stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Chip (la "maceta") con patillas -->
+  <!-- Chip (the "plant pot") with pins -->
   <rect x="150" y="410" width="100" height="70" rx="8"/>
   <rect x="176" y="430" width="48" height="30" rx="3" stroke="var(--art-2)"/>
   <path d="M140 424h10M140 445h10M140 466h10M250 424h10M250 445h10M250 466h10M172 480v10M200 480v10M228 480v10"/>
 
-  <!-- Tallo y ramas = pistas de circuito -->
+  <!-- Stem and branches = circuit traces -->
   <path d="M200 410V340l14-14V250l-14-14V160"/>
   <path d="M200 372l-30-30v-52l-30-30v-44"/>
   <path d="M214 300l32-32v-38l28-28v-34"/>
   <path d="M200 236l-24-24v-22"/>
 
-  <!-- Hojas (formas orgánicas, relleno suave) -->
+  <!-- Leaves (organic shapes, soft fill) -->
   <g fill="var(--art-2)" fill-opacity=".14" stroke="var(--art-2)">
     <path d="M140 216C110 206 100 170 112 148c28 4 40 37 28 68z"/>
     <path d="M274 168c26-10 48-40 42-66-26 2-50 31-42 66z"/>
     <path d="M176 190c-16-6-24-26-18-42 18 4 26 24 18 42z"/>
   </g>
-  <!-- Nervios de las hojas -->
+  <!-- Leaf veins -->
   <path d="M140 216l-14-48M274 168l24-48M176 190l-10-30" stroke="var(--art-2)" stroke-width="1.6"/>
 
-  <!-- Pads al final de cada pista -->
+  <!-- Pads at the end of each trace -->
   <g fill="var(--art-1)" stroke="none">
     <circle cx="140" cy="216" r="4.5"/><circle cx="274" cy="168" r="4.5"/><circle cx="176" cy="190" r="4.5"/>
   </g>
 
-  <!-- Flor: pétalos como pads redondeados alrededor de un núcleo -->
+  <!-- Flower: petals as rounded pads around a core -->
   <g transform="translate(200 128)" stroke="var(--art-2)">
     <circle r="9" fill="var(--art-2)" fill-opacity=".25"/>
     <rect x="-6" y="-36" width="12" height="22" rx="6"/>
@@ -39,7 +39,7 @@
     <rect x="-6" y="-36" width="12" height="22" rx="6" transform="rotate(300)"/>
   </g>
 
-  <!-- Píxeles que se desprenden: las hojas "se convierten en datos" -->
+  <!-- Pixels breaking away: the leaves "turn into data" -->
   <g fill="var(--art-2)" stroke="none">
     <rect x="94" y="136" width="6" height="6" opacity=".9"/><rect x="82" y="120" width="4" height="4" opacity=".6"/>
     <rect x="326" y="88" width="6" height="6" opacity=".9"/><rect x="340" y="72" width="4" height="4" opacity=".6"/>

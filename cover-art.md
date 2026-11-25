@@ -1,43 +1,43 @@
-# Cómo diseñar la ilustración de portada
+# How to design the cover illustration
 
-Objetivo: una ilustración que parezca hecha **para ese documento**, con un detalle ingenioso pero sutil.
-Referencia: `examples/cover-art/plant-circuit.svg` (informe sobre el impacto ecológico de la tecnología: una planta cuyas ramas son pistas de circuito, nacida de un chip, con hojas orgánicas, una flor de pads y píxeles que se desprenden).
+Goal: an illustration that looks made **for that document**, with a clever but subtle detail.
+Reference: `examples/cover-art/plant-circuit.svg` (report on the environmental impact of technology: a plant whose branches are circuit traces, born from a chip, with organic leaves, a flower of pads and pixels breaking away).
 
-## 1. Encontrar la idea (antes de dibujar)
-1. Resume el documento en una frase: **de qué trata** y **cuál es su tensión o tesis**.
-2. Saca dos mundos: el **tema** (planta, ciudad, salud, dinero, océano…) y el **ámbito** (tecnología, educación, datos…).
-3. Funde ambos en **una sola figura** donde cada parte tenga doble lectura. Ejemplos de la técnica:
-   - ecología + tecnología → planta con tallo de circuito
-   - educación + datos → libro abierto cuyas páginas son gráficas de barras en forma de hojas
-   - salud + IA → silueta de corazón hecha con líneas de red neuronal
-   - finanzas + sostenibilidad → monedas apiladas que forman un tronco con anillos
-4. Elige **una** idea. Si dudas entre dos, la más simple.
+## 1. Find the idea (before drawing)
+1. Summarize the document in one sentence: **what it is about** and **what its tension or thesis is**.
+2. Pull out two worlds: the **topic** (plant, city, health, money, ocean…) and the **field** (technology, education, data…).
+3. Merge both into **a single figure** where each part has a double reading. Examples of the technique:
+   - ecology + technology → plant with a circuit stem
+   - education + data → open book whose pages are bar charts shaped like leaves
+   - health + AI → heart silhouette made of neural-network lines
+   - finance + sustainability → stacked coins forming a trunk with rings
+4. Choose **one** idea. If torn between two, the simpler one.
 
-Sutileza: a primera vista se lee una imagen simple (una planta); el segundo significado se descubre al mirar de cerca. Nada de iconos tópicos (bombilla, engranaje, cerebro-chip genérico, globo con wifi).
+Subtlety: at first glance one simple image reads (a plant); the second meaning is discovered up close. No cliché icons (light bulb, gear, generic brain-chip, globe with wifi).
 
-## 2. Reglas de dibujo (SVG en línea)
-- `viewBox="0 0 400 500"` (vertical). Sin fondo, sin texto dentro del SVG.
-- **Solo colores por variables**: `stroke="var(--art-1)"` (trazo principal) y `var(--art-2)` (acento). Así se adapta a cualquier tema y paleta, incluso a portadas oscuras. Nunca hex fijos.
-- Estilo **línea fina** (`stroke-width` 1.5-2.5, `stroke-linecap="round"`, `stroke-linejoin="round"`), `fill="none"`; rellenos solo con `fill-opacity` .1-.25.
-- Pocos elementos: **10-25 formas**. Composición vertical, con un eje claro, mucho aire alrededor.
-- Un solo detalle de "sorpresa" (los píxeles que se desprenden, el pad en la punta…), no cinco.
-- Simetría rota suave: evita que parezca una plantilla.
-- Coordenadas redondas y rectas a 45°/90° para lo técnico; curvas Bézier suaves para lo orgánico. Contraste entre ambos = el concepto.
+## 2. Drawing rules (inline SVG)
+- `viewBox="0 0 400 500"` (vertical). No background, no text inside the SVG.
+- **Colors only through variables**: `stroke="var(--art-1)"` (main stroke) and `var(--art-2)` (accent). That way it adapts to any theme and palette, even dark covers. Never fixed hex values.
+- **Thin line** style (`stroke-width` 1.5-2.5, `stroke-linecap="round"`, `stroke-linejoin="round"`), `fill="none"`; fills only with `fill-opacity` .1-.25.
+- Few elements: **10-25 shapes**. Vertical composition, with a clear axis, lots of air around.
+- A single "surprise" detail (the pixels breaking away, the pad at the tip…), not five.
+- Gently broken symmetry: avoid it looking like a template.
+- Round coordinates and 45°/90° straight lines for the technical; smooth Bézier curves for the organic. The contrast between both = the concept.
 
-## 3. Integrar
-Dentro de `<section class="cover">`, antes de `.meta`:
+## 3. Integrate
+Inside `<section class="cover">`, before `.meta`:
 ```html
 <div class="cover-art"><svg viewBox="0 0 400 500" …>…</svg></div>
 ```
-El tema coloca y colorea `.cover-art` (esquina superior o inferior, según el diseño de cada portada). No pongas estilos en línea de posición.
+The theme places and colors `.cover-art` (top or bottom corner, depending on each cover's design). Do not put positioning styles inline.
 
-## 4. Verificar
-Renderiza y mira la página 1 (`pdf2png.swift`). Comprueba:
-- no tapa título, subtítulo ni meta;
-- se distingue sobre el fondo de la portada (en `corporate`, `bold`, `mono` las líneas son claras);
-- la idea se entiende sin explicación;
-- no hay nada cortado.
-Si algo falla, corrige y repite (máx. 2 veces). Si la idea no funciona visualmente, simplifícala; no añadas más elementos.
+## 4. Verify
+Render and look at page 1 (`pdf2png.swift`). Check:
+- it does not cover the title, subtitle or meta;
+- it stands out against the cover background (in `corporate`, `bold`, `mono` the lines are light);
+- the idea is understood without explanation;
+- nothing is cut off.
+If something fails, fix and repeat (max 2 times). If the idea does not work visually, simplify it; do not add more elements.
 
 ## 5. Plan B
-Si no sale una metáfora buena: composición abstracta (líneas, círculos, cuadrículas) con `--art-1/--art-2`, inspirada en el tema (ondas para agua, retícula para datos, anillos para tiempo). Mejor sobria que forzada.
+If no good metaphor comes out: an abstract composition (lines, circles, grids) with `--art-1/--art-2`, inspired by the topic (waves for water, grid for data, rings for time). Better sober than forced.

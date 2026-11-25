@@ -1,4 +1,4 @@
-/* EDITORIAL: serif elegante, aire, portada tipográfica. Bueno para ensayos, memorias, informes narrativos. */
+/* EDITORIAL: elegant serif, white space, typographic cover. Good for essays, memoirs, narrative reports. */
 [data-theme="editorial"] { --bg:#fffdf9; --ink:#1c1b1a; --muted:#6f6a63; --rule:#ddd6cb;
   --font-head: "Baskerville", "Palatino", Georgia, serif; --font-body: "Palatino", Georgia, serif; --size: 11pt; --leading: 1.6; }
 [data-theme="editorial"] h1 { font-size: 26pt; font-weight: 400; margin: 0 0 .5em; letter-spacing: -.01em; }
@@ -12,6 +12,6 @@
 [data-theme="editorial"] .lead + p::first-letter, [data-theme="editorial"] .dropcap::first-letter { font-size: 3.6em; float: left; line-height: .85; padding: .06em .08em 0 0; color: var(--accent); }
 [data-theme="editorial"] .stat .num { font-weight: 400; }
 
-/* Ilustración de portada (opcional) */
+/* Cover illustration (optional) */
 [data-theme="editorial"] .cover { --art-1: var(--ink); --art-2: var(--accent); }
 [data-theme="editorial"] .cover-art { right: 24mm; top: 16mm; width: 72mm; height: 90mm; }

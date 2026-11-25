@@ -1,4 +1,4 @@
-/* CORPORATE: cabecera de color, sobrio y claro. Bueno para informes de empresa, memorias, entregas de clase formales. */
+/* CORPORATE: colored header, sober and clear. Good for company reports, annual reports, formal class submissions. */
 [data-theme="corporate"] { --bg:#fff; --ink:#1d2433; --muted:#667085; --rule:#e4e7ec;
   --font-head: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif; --font-body: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif; --size: 10.2pt; }
 [data-theme="corporate"] h1 { font-size: 21pt; font-weight: 600; color: var(--accent-2); margin: 0 0 .6em; padding-bottom: .3em; border-bottom: 3px solid var(--accent); width: fit-content; }
@@ -12,6 +12,6 @@
 [data-theme="corporate"] th { background: var(--accent-2); color: #fff; border: 0; }
 [data-theme="corporate"] tr:nth-child(even) td { background: var(--tint); }
 
-/* Ilustración de portada (opcional) */
+/* Cover illustration (optional) */
 [data-theme="corporate"] .cover { --art-1: #fff; --art-2: var(--accent-2); }
 [data-theme="corporate"] .cover-art { right: 22mm; top: 12mm; width: 80mm; height: 100mm; }

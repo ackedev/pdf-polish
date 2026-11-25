@@ -1,4 +1,4 @@
-/* BOLD: bloques de color, tipografía grande, carácter. Bueno para pitch, portfolio, guías, material más visual. */
+/* BOLD: color blocks, large type, character. Good for pitches, portfolios, guides, more visual material. */
 [data-theme="bold"] { --bg:#fbfaf7; --ink:#15151a; --muted:#6a6a73; --rule:#dcdad3;
   --font-head: "Futura", "Avenir Next", sans-serif; --font-body: "Avenir Next", "Helvetica Neue", sans-serif; --size: 10.3pt; }
 [data-theme="bold"] h1 { font-size: 30pt; font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.05; padding-top: .12em; margin: 0 0 .5em; }
@@ -13,6 +13,6 @@
 [data-theme="bold"] .callout { border-left: 0; border-radius: 6px; background: var(--accent); color: #fff; }
 [data-theme="bold"] .callout .label { color: rgba(255,255,255,.8); }
 
-/* Ilustración de portada (opcional) */
+/* Cover illustration (optional) */
 [data-theme="bold"] .cover { --art-1: #fff; --art-2: color-mix(in srgb, var(--accent) 30%, white); }
 [data-theme="bold"] .cover-art { right: 12mm; bottom: 12mm; width: 72mm; height: 90mm; }

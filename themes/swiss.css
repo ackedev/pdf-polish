@@ -1,4 +1,4 @@
-/* SWISS: sans limpia, rejilla, mucho blanco, números grandes. Bueno para datos, propuestas, informes técnicos. */
+/* SWISS: clean sans, grid, lots of white, big numbers. Good for data, proposals, technical reports. */
 [data-theme="swiss"] { --bg:#ffffff; --ink:#111; --muted:#777; --rule:#e3e3e3;
   --font-head: "Helvetica Neue", Helvetica, Arial, sans-serif; --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif; --size: 10pt; --leading: 1.5; }
 [data-theme="swiss"] h1 { font-size: 24pt; font-weight: 700; letter-spacing: -.02em; margin: 0 0 .6em; }
@@ -12,6 +12,6 @@
 [data-theme="swiss"] .stat .num { font-weight: 700; letter-spacing: -.03em; font-size: 2.8em; }
 [data-theme="swiss"] th { border-bottom-color: var(--accent); }
 
-/* Ilustración de portada (opcional) */
+/* Cover illustration (optional) */
 [data-theme="swiss"] .cover { --art-1: #111; --art-2: var(--accent); }
 [data-theme="swiss"] .cover-art { left: 20mm; top: 18mm; width: 68mm; height: 85mm; }

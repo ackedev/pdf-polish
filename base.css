@@ -1,4 +1,4 @@
-/* Base común: impresión, saltos de página y componentes. Los temas solo cambian el aspecto. */
+/* Common base: print, page breaks and components. Themes only change the look. */
 @page { size: A4; margin: 22mm 20mm 24mm; background: var(--bg); }
 @page cover { margin: 0; }
 @page { @bottom-right { content: counter(page); font: 8pt var(--font-body); color: var(--muted); } }
@@ -16,7 +16,7 @@ strong { font-weight: 650; }
 ul, ol { margin: 0 0 .9em; padding-left: 1.3em; }
 li { margin-bottom: .25em; }
 
-/* Portada: ocupa una página completa sin márgenes */
+/* Cover: fills a whole page with no margins */
 .cover { page: cover; height: 297mm; width: 210mm; position: relative; overflow: hidden; break-after: page; }
 .cover .title { font-family: var(--font-head); }
 .cover .subtitle { color: var(--muted); }
