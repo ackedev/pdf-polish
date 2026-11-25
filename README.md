@@ -90,9 +90,14 @@ examples/             contenido de ejemplo e ilustración de portada
 - Paleta: una línea nueva en `palettes/palettes.css`.
 
 ## Galería
-Mismo documento y misma ilustración de portada, con los 5 temas (de izquierda a derecha: `editorial`, `swiss`, `corporate`, `bold`, `mono`). El dibujo se recolorea solo según el tema y la paleta.
+Mismo contenido con los 5 temas (de izquierda a derecha: `editorial`, `swiss`, `corporate`, `bold`, `mono`): portada arriba, página interior abajo.
 
-![Portadas con los 5 temas](docs/covers.png)
+![Los 5 temas: portada y página interior](docs/themes.png)
+
+### Con portada ilustrada
+Si pides portada, la skill diseña una ilustración a medida del documento. Aquí, un informe sobre el impacto ecológico de la tecnología: una planta cuyo tallo y ramas son pistas de circuito. El dibujo se recolorea solo según el tema y la paleta.
+
+![Portadas con ilustración a medida](docs/cover-art.png)
 
 ## Licencia
 MIT © 2026 Aleix Garcia Pena. Consulta [`LICENSE`](LICENSE).
