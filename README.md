@@ -1,3 +1,5 @@
+**Español** · [English](README.en.md)
+
 # pdf-polish
 
 Skill para Claude Code que **rediseña la presentación de un PDF o documento** sin tocar su contenido. Pensada para cuando el texto está bien pero Claude siempre genera el mismo diseño, color y estructura.
