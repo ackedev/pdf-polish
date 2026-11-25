@@ -1,0 +1,17 @@
+/* EDITORIAL: serif elegante, aire, portada tipográfica. Bueno para ensayos, memorias, informes narrativos. */
+[data-theme="editorial"] { --bg:#fffdf9; --ink:#1c1b1a; --muted:#6f6a63; --rule:#ddd6cb;
+  --font-head: "Baskerville", "Palatino", Georgia, serif; --font-body: "Palatino", Georgia, serif; --size: 11pt; --leading: 1.6; }
+[data-theme="editorial"] h1 { font-size: 26pt; font-weight: 400; margin: 0 0 .5em; letter-spacing: -.01em; }
+[data-theme="editorial"] h2 { font-size: 16pt; font-weight: 400; font-style: italic; color: var(--accent); margin: 1.6em 0 .5em; }
+[data-theme="editorial"] h3 { font-size: 11pt; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; margin: 1.4em 0 .4em; }
+[data-theme="editorial"] .cover { background: var(--bg); padding: 40mm 28mm; display: flex; flex-direction: column; justify-content: space-between; }
+[data-theme="editorial"] .cover::before { content: ""; display: block; width: 18mm; height: 2px; background: var(--accent); }
+[data-theme="editorial"] .cover .title { font-size: 44pt; line-height: 1.05; font-weight: 400; letter-spacing: -.02em; margin: 0 0 8mm; }
+[data-theme="editorial"] .cover .subtitle { font-size: 15pt; font-style: italic; max-width: 120mm; }
+[data-theme="editorial"] .cover .meta { border-top: 1px solid var(--rule); padding-top: 4mm; }
+[data-theme="editorial"] .lead + p::first-letter, [data-theme="editorial"] .dropcap::first-letter { font-size: 3.6em; float: left; line-height: .85; padding: .06em .08em 0 0; color: var(--accent); }
+[data-theme="editorial"] .stat .num { font-weight: 400; }
+
+/* Ilustración de portada (opcional) */
+[data-theme="editorial"] .cover { --art-1: var(--ink); --art-2: var(--accent); }
+[data-theme="editorial"] .cover-art { right: 24mm; top: 16mm; width: 72mm; height: 90mm; }

@@ -1,0 +1,8 @@
+/* Paletas: solo definen color de acento. Se combinan con cualquier tema. */
+[data-palette="cobalt"]     { --accent: #1f4fd8; --accent-2: #0b1f5c; --tint: #eef2fd; }
+[data-palette="terracotta"] { --accent: #c4552d; --accent-2: #5b2412; --tint: #fbf0ea; }
+[data-palette="forest"]     { --accent: #2f6b4f; --accent-2: #12301f; --tint: #ecf5ef; }
+[data-palette="plum"]       { --accent: #7a2e6b; --accent-2: #36133a; --tint: #f7edf5; }
+[data-palette="ocean"]      { --accent: #0e7c86; --accent-2: #07343a; --tint: #e8f5f6; }
+[data-palette="amber"]      { --accent: #c98a00; --accent-2: #4a3300; --tint: #fdf5e0; }
+[data-palette="graphite"]   { --accent: #2b2b2b; --accent-2: #000;    --tint: #f1f1f1; }

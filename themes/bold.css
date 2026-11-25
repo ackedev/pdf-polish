@@ -1,0 +1,18 @@
+/* BOLD: bloques de color, tipografía grande, carácter. Bueno para pitch, portfolio, guías, material más visual. */
+[data-theme="bold"] { --bg:#fbfaf7; --ink:#15151a; --muted:#6a6a73; --rule:#dcdad3;
+  --font-head: "Futura", "Avenir Next", sans-serif; --font-body: "Avenir Next", "Helvetica Neue", sans-serif; --size: 10.3pt; }
+[data-theme="bold"] h1 { font-size: 30pt; font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.05; padding-top: .12em; margin: 0 0 .5em; }
+[data-theme="bold"] h2 { font-size: 15pt; font-weight: 700; text-transform: uppercase; margin: 1.6em 0 .6em; background: var(--accent); color: #fff; padding: .25em .6em; display: inline-block; }
+[data-theme="bold"] h3 { font-size: 11pt; font-weight: 700; color: var(--accent); margin: 1.2em 0 .3em; }
+[data-theme="bold"] .cover { background: var(--accent); color: #fff; padding: 24mm 20mm; }
+[data-theme="bold"] .cover::before { content: ""; position: absolute; right: -40mm; bottom: -40mm; width: 160mm; height: 160mm; border-radius: 50%; background: var(--accent-2); opacity: .55; }
+[data-theme="bold"] .cover .title { position: relative; color: #fff; font-size: 62pt; font-weight: 700; text-transform: uppercase; line-height: .92; letter-spacing: -.02em; margin-top: 70mm; }
+[data-theme="bold"] .cover .subtitle { position: relative; color: rgba(255,255,255,.88); font-size: 15pt; margin-top: 10mm; max-width: 120mm; }
+[data-theme="bold"] .cover .meta { position: absolute; left: 20mm; top: 24mm; color: rgba(255,255,255,.85); text-transform: uppercase; }
+[data-theme="bold"] .stat { border-top: 0; background: var(--tint); padding: .8em; border-radius: 6px; }
+[data-theme="bold"] .callout { border-left: 0; border-radius: 6px; background: var(--accent); color: #fff; }
+[data-theme="bold"] .callout .label { color: rgba(255,255,255,.8); }
+
+/* Ilustración de portada (opcional) */
+[data-theme="bold"] .cover { --art-1: #fff; --art-2: color-mix(in srgb, var(--accent) 30%, white); }
+[data-theme="bold"] .cover-art { right: 12mm; bottom: 12mm; width: 72mm; height: 90mm; }

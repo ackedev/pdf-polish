@@ -1,0 +1,49 @@
+<section class="cover">
+  <div class="band"></div>
+  <h1 class="title">Informe de ejemplo: la app en cifras</h1>
+  <p class="subtitle">Resumen del primer trimestre y próximos pasos</p>
+  <p class="meta">Autor · Noviembre 2026</p>
+</section>
+
+<h1>1. Resumen</h1>
+<p class="lead">La aplicación superó los objetivos del trimestre, con un crecimiento sostenido de usuarios y una reducción notable de errores.</p>
+<p>Durante estos tres meses se completaron las tres funcionalidades principales y se corrigieron los fallos críticos detectados en las pruebas. El equipo mantuvo un ritmo estable de entregas semanales.</p>
+
+<div class="stats">
+  <div class="stat"><span class="num">1.240</span><span class="cap">usuarios activos</span></div>
+  <div class="stat"><span class="num">-63%</span><span class="cap">errores reportados</span></div>
+  <div class="stat"><span class="num">12</span><span class="cap">entregas</span></div>
+</div>
+
+<h2>Objetivos cumplidos</h2>
+<ul>
+  <li>Registro e inicio de sesión con validación completa.</li>
+  <li>Sincronización de datos entre dispositivos.</li>
+  <li>Modo oscuro y accesibilidad básica.</li>
+</ul>
+
+<div class="callout"><span class="label">Nota</span><p>Las cifras de usuarios activos incluyen solo cuentas con al menos una sesión en los últimos 30 días.</p></div>
+
+<h1>2. Resultados por área</h1>
+<table>
+  <thead><tr><th>Área</th><th>Estado</th><th>Responsable</th><th>Comentario</th></tr></thead>
+  <tbody>
+    <tr><td>Autenticación</td><td>Completado</td><td>Marta</td><td>Pendiente revisar recuperación de contraseña.</td></tr>
+    <tr><td>Sincronización</td><td>En curso</td><td>Joan</td><td>Faltan pruebas con conexión inestable.</td></tr>
+    <tr><td>Interfaz</td><td>Completado</td><td>Lucía</td><td>Se ajustaron contrastes y tamaños de texto.</td></tr>
+  </tbody>
+</table>
+
+<blockquote>La mejor mejora fue la que no se notó: la app dejó de fallar.</blockquote>
+
+<h2>Ejemplo técnico</h2>
+<pre><code>async function sync(user) {
+  const changes = await api.getChanges(user.lastSync);
+  return store.apply(changes);
+}</code></pre>
+
+<h1>3. Próximos pasos</h1>
+<div class="grid-2">
+  <div><h3>Corto plazo</h3><p>Cerrar pruebas de sincronización y publicar la versión 1.1.</p></div>
+  <div><h3>Medio plazo</h3><p>Añadir notificaciones y mejorar el rendimiento en dispositivos antiguos.</p></div>
+</div>

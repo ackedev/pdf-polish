@@ -1,0 +1,21 @@
+/* MONO: estética técnica, monoespaciada en títulos, sobria. Bueno para documentación, código, informes de ingeniería, trabajos de DAM. */
+[data-theme="mono"] { --bg:#fafaf8; --ink:#1a1d21; --muted:#6b7280; --rule:#d9dbd6;
+  --font-head: Menlo, "SF Mono", monospace; --font-body: "Helvetica Neue", Helvetica, sans-serif; --size: 10pt; }
+[data-theme="mono"] h1 { font-size: 20pt; font-weight: 700; margin: 0 0 .6em; }
+[data-theme="mono"] h1::before { content: "# "; color: var(--accent); }
+[data-theme="mono"] h2 { font-size: 12.5pt; font-weight: 700; margin: 1.6em 0 .5em; }
+[data-theme="mono"] h2::before { content: "## "; color: var(--accent); }
+[data-theme="mono"] h3 { font-size: 10pt; font-weight: 700; margin: 1.2em 0 .3em; }
+[data-theme="mono"] h3::before { content: "### "; color: var(--accent); }
+[data-theme="mono"] .cover { background: #14171a; color: #e8eaec; padding: 24mm 22mm; font-family: Menlo, monospace; }
+[data-theme="mono"] .cover::before { content: "$ cat README"; display: block; color: var(--accent); filter: brightness(1.5); font-size: 10pt; margin-bottom: 70mm; }
+[data-theme="mono"] .cover .title { font-size: 34pt; font-weight: 700; line-height: 1.1; color: #fff; }
+[data-theme="mono"] .cover .subtitle { font-family: "Helvetica Neue", sans-serif; color: #aeb4ba; font-size: 13pt; margin-top: 8mm; max-width: 120mm; }
+[data-theme="mono"] .cover .meta { position: absolute; left: 22mm; bottom: 20mm; color: #7d848b; }
+[data-theme="mono"] pre { background: #14171a; color: #e8eaec; }
+[data-theme="mono"] pre code { color: inherit; }
+[data-theme="mono"] th { font-family: Menlo, monospace; }
+
+/* Ilustración de portada (opcional) */
+[data-theme="mono"] .cover { --art-1: #e8eaec; --art-2: color-mix(in srgb, var(--accent) 55%, white); }
+[data-theme="mono"] .cover-art { right: 22mm; bottom: 22mm; width: 80mm; height: 100mm; }
